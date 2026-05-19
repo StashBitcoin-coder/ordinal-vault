@@ -1,5 +1,5 @@
 'use client';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import Link from 'next/link';
 import Header from '@/app/components/Header';
 import { VaultRecord } from '@/app/types';
@@ -46,7 +46,7 @@ export default function GalleryPage() {
             COMPLETE COLLECTION
           </div>
           <h1 style={{
-            fontFamily: "'Oswald', sans-serif", fontWeight: 800,
+            fontFamily: 'Oswald, sans-serif', fontWeight: 800,
             fontSize: 'clamp(1.8rem, 5vw, 2.8rem)',
             letterSpacing: '-0.03em', color: 'var(--text)',
             marginBottom: '0.4rem',
@@ -127,6 +127,62 @@ export default function GalleryPage() {
   );
 }
 
+function OrdinalFrame({ inscriptionId, height = '100%' }: { inscriptionId: string; height?: string | number }) {
+  const iframeRef = useRef<HTMLIFrameElement>(null);
+  const [loaded, setLoaded] = useState(false);
+
+  useEffect(() => {
+    setLoaded(false);
+    const timeout = setTimeout(() => {
+      const iframe = iframeRef.current;
+      if (iframe && !loaded) {
+        const src = iframe.src;
+        iframe.src = '';
+        setTimeout(() => { iframe.src = src; }, 100);
+      }
+    }, 10000);
+    return () => clearTimeout(timeout);
+  }, [inscriptionId]);
+
+  return (
+    <div style={{ position: 'relative', width: '100%', height }}>
+      {/* Skeleton */}
+      {!loaded && (
+        <div style={{
+          position: 'absolute', inset: 0,
+          background: 'linear-gradient(90deg, var(--bg3), var(--bg2), var(--bg3))',
+          backgroundSize: '200% 100%',
+          animation: 'pulse 1.5s infinite ease-in-out',
+          display: 'flex', alignItems: 'center', justifyContent: 'center',
+          color: 'var(--accent)', fontFamily: 'monospace', fontSize: '0.75rem',
+          zIndex: 1,
+        }}>
+          <style>{`@keyframes pulse { 0%{background-position:0% 50%} 50%{background-position:100% 50%} 100%{background-position:0% 50%} }`}</style>
+          loading...
+        </div>
+      )}
+      <iframe
+        ref={iframeRef}
+        src={`https://ordinals.com/content/${inscriptionId}`}
+        sandbox="allow-scripts"
+        scrolling="no"
+        loading="lazy"
+        onLoad={() => setLoaded(true)}
+        style={{
+          position: 'absolute', top: 0, left: 0,
+          width: '100%', height: '100%',
+          border: 'none',
+          pointerEvents: 'none',
+          imageRendering: 'pixelated',
+          opacity: loaded ? 1 : 0,
+          transition: 'opacity 0.5s ease-in',
+          zIndex: 2,
+        }}
+      />
+    </div>
+  );
+}
+
 function GalleryCard({ vault, onClick }: { vault: VaultRecord; onClick: () => void }) {
   return (
     <button
@@ -154,37 +210,11 @@ function GalleryCard({ vault, onClick }: { vault: VaultRecord; onClick: () => vo
         overflow: 'hidden', borderBottom: '1px solid var(--border)',
         position: 'relative',
       }}>
-        <div style={{
-          position: 'absolute', inset: 0,
-          background: 'var(--bg3)',
-          display: 'flex', alignItems: 'center', justifyContent: 'center',
-          fontSize: '1.5rem', color: 'var(--text2)',
-        }}>₿</div>
-        <iframe
-          src={`https://ordinals.com/content/${vault.inscriptionId}`}
-          sandbox="allow-scripts"
-          scrolling="no"
-          frameBorder="0"
-          onLoad={(e) => {
-            const el = e.currentTarget;
-            if (el.previousElementSibling) {
-              (el.previousElementSibling as HTMLElement).style.display = 'none';
-            }
-            el.style.opacity = '1';
-          }}
-          style={{
-            width: '100%', height: '100%',
-            border: 'none', display: 'block',
-            pointerEvents: 'none',
-            opacity: '0',
-            transition: 'opacity 0.5s ease-in',
-            position: 'relative', zIndex: 1,
-          }}
-        />
+        <OrdinalFrame inscriptionId={vault.inscriptionId} height="100%" />
       </div>
       <div style={{ padding: '0.75rem' }}>
         <div style={{
-          fontFamily: "'Oswald', sans-serif", fontWeight: 700,
+          fontFamily: 'Oswald, sans-serif', fontWeight: 700,
           fontSize: '0.82rem', color: 'var(--text)', marginBottom: '0.25rem',
           whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis',
         }}>
@@ -234,38 +264,14 @@ function Modal({ vault, onClose }: { vault: VaultRecord; onClose: () => void }) 
         <div style={{
           background: 'var(--bg3)',
           borderBottom: '1px solid var(--border)',
-          height: 320, position: 'relative',
+          height: 340, position: 'relative',
         }}>
-          <div style={{
-            position: 'absolute', inset: 0,
-            display: 'flex', alignItems: 'center', justifyContent: 'center',
-            fontSize: '2rem', color: 'var(--text2)',
-          }}>₿</div>
-          <iframe
-            src={`https://ordinals.com/content/${vault.inscriptionId}`}
-            sandbox="allow-scripts"
-            scrolling="no"
-            frameBorder="0"
-            onLoad={(e) => {
-              const el = e.currentTarget;
-              if (el.previousElementSibling) {
-                (el.previousElementSibling as HTMLElement).style.display = 'none';
-              }
-              el.style.opacity = '1';
-            }}
-            style={{
-              width: '100%', height: '100%',
-              border: 'none', borderRadius: 8,
-              opacity: '0',
-              transition: 'opacity 0.5s ease-in',
-              position: 'relative', zIndex: 1,
-            }}
-          />
+          <OrdinalFrame inscriptionId={vault.inscriptionId} height={340} />
         </div>
 
         <div style={{ padding: '1.5rem' }}>
           <div style={{
-            fontFamily: "'Oswald', sans-serif", fontWeight: 800,
+            fontFamily: 'Oswald, sans-serif', fontWeight: 800,
             fontSize: '1.3rem', marginBottom: '1.25rem', color: 'var(--text)',
           }}>
             {vault.assetName}
