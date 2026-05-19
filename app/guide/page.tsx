@@ -50,22 +50,7 @@ export default function GuidePage() {
             </p>
           </StepCard>
 
-          <StepCard step={2} title="Check the current wallet address">
-            <p style={bodyText}>
-              On the inscription page, look for the current wallet address it is held in.
-              Compare it to the wallet address shown in this registry.
-            </p>
-            <Callout type="success">
-              <strong>Addresses match</strong> — the Ordinal is still in the original mint wallet. ✓
-            </Callout>
-            <Callout type="warning">
-              <strong>Addresses differ</strong> — the Ordinal has been transferred to a new wallet.
-              It may have been sold, swept by the owner, or moved for another reason. This is
-              normal and expected when ownership changes.
-            </Callout>
-          </StepCard>
-
-          <StepCard step={3} title="Cross-check on a marketplace">
+          <StepCard step={2} title="Cross-check on a marketplace">
             <p style={bodyText}>
               For a second confirmation, search the Inscription ID on any of the three marketplaces
               below. The listing page will show the current holder's wallet address and full
