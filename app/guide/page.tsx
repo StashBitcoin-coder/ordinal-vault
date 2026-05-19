@@ -30,8 +30,9 @@ export default function GuidePage() {
           </h1>
           <p style={{ color: 'var(--text2)', fontSize: '0.88rem', lineHeight: 1.8 }}>
             This guide covers two things every collector should know:
-            how to check whether an ordinal has moved out of its registered vault,
-            and how to list it for sale on the three major Bitcoin ordinal marketplaces.
+            how to check whether an ordinal has moved out of the wallet it was minted in,
+            and how to list it for sale on the three major Bitcoin ordinal marketplaces. T
+            The private key embedded in the art gives one control of the Ordinal. 
           </p>
         </div>
 
@@ -52,7 +53,7 @@ export default function GuidePage() {
 
           <StepCard step={2} title="Cross-check on a marketplace">
             <p style={bodyText}>
-              For a second confirmation, search the Inscription ID on any of the three marketplaces
+              For a second confirmation, search the Inscription ID - not the Inscription number - on any of the three marketplaces
               below. The listing page will show the current holder's wallet address and full
               transfer history.
             </p>
@@ -64,7 +65,7 @@ export default function GuidePage() {
           <InfoBox title="What does 'swept the vault' mean?">
             If a collector moves an Ordinal from one wallet to another, that's called sweeping
             the vault. The Ordinal still exists. It just lives at a new wallet address. The
-            registry here reflects the original wallet address at time of minting. Always use
+            registry here reflects the original wallet address where the Ordinal was minted. Always use
             Ordinals.com as the source of truth for current location.
           </InfoBox>
         </Section>
