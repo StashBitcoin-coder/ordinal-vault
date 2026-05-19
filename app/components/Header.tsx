@@ -61,10 +61,6 @@ export default function Header() {
             color: 'var(--text2)', fontSize: '0.75rem',
             letterSpacing: '0.08em', textDecoration: 'none',
           }}>GALLERY</Link>
-          <Link href="/check" style={{
-            color: 'var(--text2)', fontSize: '0.75rem',
-            letterSpacing: '0.08em', textDecoration: 'none',
-          }}>CHECK</Link>
           <Link href="/guide" style={{
             color: 'var(--text2)', fontSize: '0.75rem',
             letterSpacing: '0.08em', textDecoration: 'none',

@@ -169,9 +169,6 @@ export default function GuidePage() {
 
         {/* Back links */}
         <div style={{ display: 'flex', gap: '1.5rem', flexWrap: 'wrap', marginTop: '1rem' }}>
-          <Link href="/check" style={{ fontSize: '0.78rem', color: ACCENT, letterSpacing: '0.06em' }}>
-            ← Vault Checker
-          </Link>
           <Link href="/" style={{ fontSize: '0.78rem', color: ACCENT, letterSpacing: '0.06em' }}>
             ← Gallery
           </Link>
