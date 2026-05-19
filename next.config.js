@@ -5,7 +5,12 @@ const nextConfig = {
       {
         protocol: 'https',
         hostname: 'ordinals.com',
-        pathname: '/content/**',
+        pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'cdn.ordinalswallet.com',
+        pathname: '/**',
       },
     ],
   },

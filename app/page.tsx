@@ -163,7 +163,7 @@ function GalleryCard({ vault, onClick }: { vault: VaultRecord; onClick: () => vo
           }}>🖼</div>
         ) : (
           <img
-            src={`https://ordinals.com/thumbnail/${vault.inscriptionId}`}
+            src={`https://cdn.ordinalswallet.com/inscription/preview/${vault.inscriptionId}`}
             alt={vault.assetName}
             onError={() => setImgError(true)}
             style={{ width: '100%', height: '100%', objectFit: 'cover' }}
@@ -225,7 +225,7 @@ function Modal({ vault, onClose }: { vault: VaultRecord; onClose: () => void }) 
           display: 'flex', justifyContent: 'center',
         }}>
           <img
-            src={`https://ordinals.com/thumbnail/${vault.inscriptionId}`}
+            src={`https://cdn.ordinalswallet.com/inscription/preview/${vault.inscriptionId}`}
             alt={vault.assetName}
             style={{ maxHeight: 300, maxWidth: '100%', borderRadius: 8, objectFit: 'contain' }}
           />
