@@ -103,7 +103,7 @@ function GalleryCard({ vault, onClick }: { vault: VaultRecord; onClick: () => vo
           <div style={{ fontSize: '2rem', color: 'var(--text2)' }}>🖼</div>
         ) : (
           <img
-            src={`https://ordinals.com/content/${vault.inscriptionId}`}
+            src={`/api/inscription?id=${vault.inscriptionId}`}
             alt={vault.assetName}
             onError={() => setImgError(true)}
             style={{ width: '100%', height: '100%', objectFit: 'cover' }}
@@ -127,6 +127,7 @@ function Modal({ vault, onClose }: { vault: VaultRecord; onClose: () => void }) 
   const gammaUrl = `https://gamma.io/ordinals/inscription/${vault.inscriptionId}`;
   const unisatUrl = `https://unisat.io/inscription/${vault.inscriptionId}`;
   const ordinalsWalletUrl = `https://ordinalswallet.com/inscription/${vault.inscriptionId}`;
+  const osuraUrl = `https://osura.com/inscription/${vault.inscriptionId}`;
 
   useEffect(() => {
     const handler = (e: KeyboardEvent) => { if (e.key === 'Escape') onClose(); };
@@ -139,7 +140,7 @@ function Modal({ vault, onClose }: { vault: VaultRecord; onClose: () => void }) 
       <div onClick={(e) => e.stopPropagation()} style={{ background: 'var(--card-bg)', border: '1px solid var(--card-border)', borderRadius: 14, maxWidth: 560, width: '100%', maxHeight: '90vh', overflow: 'auto' }}>
         <div style={{ background: 'var(--bg3)', padding: '1.5rem', borderBottom: '1px solid var(--border)', display: 'flex', justifyContent: 'center' }}>
           <img
-            src={`https://ordinals.com/content/${vault.inscriptionId}`}
+            src={`/api/inscription?id=${vault.inscriptionId}`}
             alt={vault.assetName}
             style={{ maxHeight: 300, maxWidth: '100%', borderRadius: 8, objectFit: 'contain' }}
           />
@@ -156,7 +157,12 @@ function Modal({ vault, onClose }: { vault: VaultRecord; onClose: () => void }) 
           </a>
           <div style={{ fontSize: '0.62rem', letterSpacing: '0.1em', color: 'var(--text2)', marginBottom: '0.6rem' }}>MARKETPLACE LINKS</div>
           <div style={{ display: 'flex', gap: '0.6rem', flexWrap: 'wrap', marginBottom: '1.25rem' }}>
-            {[{ label: 'Gamma', url: gammaUrl }, { label: 'UniSat', url: unisatUrl }, { label: 'Ordinals Wallet', url: ordinalsWalletUrl }].map(({ label, url }) => (
+            {[
+              { label: 'Gamma', url: gammaUrl },
+              { label: 'UniSat', url: unisatUrl },
+              { label: 'Ordinals Wallet', url: ordinalsWalletUrl },
+              { label: 'Osura', url: osuraUrl },
+            ].map(({ label, url }) => (
               <a key={label} href={url} target="_blank" rel="noopener noreferrer" style={{ fontSize: '0.72rem', color: 'var(--text2)', border: '1px solid var(--border)', borderRadius: 5, padding: '0.35rem 0.75rem', textDecoration: 'none' }}>{label} ↗</a>
             ))}
           </div>
