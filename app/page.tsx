@@ -128,6 +128,7 @@ export default function GalleryPage() {
 }
 
 function GalleryCard({ vault, onClick }: { vault: VaultRecord; onClick: () => void }) {
+  }
   const [imgError, setImgError] = useState(false);
 
   return (
