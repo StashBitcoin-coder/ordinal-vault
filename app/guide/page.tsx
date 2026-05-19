@@ -31,7 +31,7 @@ export default function GuidePage() {
           <p style={{ color: 'var(--text2)', fontSize: '0.88rem', lineHeight: 1.8 }}>
             This guide covers two things every collector should know:
             how to check whether an ordinal has moved out of the wallet it was minted in,
-            and how to list it for sale on the three major Bitcoin ordinal marketplaces. T
+            and how to list it for sale on the three major Bitcoin ordinal marketplaces. 
             The private key embedded in the art gives one control of the Ordinal. 
           </p>
         </div>
