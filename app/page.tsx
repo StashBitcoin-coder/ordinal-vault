@@ -128,8 +128,6 @@ export default function GalleryPage() {
 }
 
 function GalleryCard({ vault, onClick }: { vault: VaultRecord; onClick: () => void }) {
-  const [imgError, setImgError] = useState(false);
-
   return (
     <button
       onClick={onClick}
@@ -154,21 +152,35 @@ function GalleryCard({ vault, onClick }: { vault: VaultRecord; onClick: () => vo
       <div style={{
         background: 'var(--bg3)', aspectRatio: '1 / 1',
         overflow: 'hidden', borderBottom: '1px solid var(--border)',
+        position: 'relative',
       }}>
-        {imgError ? (
-          <div style={{
-            width: '100%', height: '100%', display: 'flex',
-            alignItems: 'center', justifyContent: 'center',
-            fontSize: '2rem', color: 'var(--text2)',
-          }}>🖼</div>
-        ) : (
-          <img
-            src={`https://cdn.ordinalswallet.com/inscription/preview/${vault.inscriptionId}`}
-            alt={vault.assetName}
-            onError={() => setImgError(true)}
-            style={{ width: '100%', height: '100%', objectFit: 'cover' }}
-          />
-        )}
+        <div style={{
+          position: 'absolute', inset: 0,
+          background: 'var(--bg3)',
+          display: 'flex', alignItems: 'center', justifyContent: 'center',
+          fontSize: '1.5rem', color: 'var(--text2)',
+        }}>₿</div>
+        <iframe
+          src={`https://ordinals.com/content/${vault.inscriptionId}`}
+          sandbox="allow-scripts"
+          scrolling="no"
+          frameBorder="0"
+          onLoad={(e) => {
+            const el = e.currentTarget;
+            if (el.previousElementSibling) {
+              (el.previousElementSibling as HTMLElement).style.display = 'none';
+            }
+            el.style.opacity = '1';
+          }}
+          style={{
+            width: '100%', height: '100%',
+            border: 'none', display: 'block',
+            pointerEvents: 'none',
+            opacity: '0',
+            transition: 'opacity 0.5s ease-in',
+            position: 'relative', zIndex: 1,
+          }}
+        />
       </div>
       <div style={{ padding: '0.75rem' }}>
         <div style={{
@@ -220,14 +232,34 @@ function Modal({ vault, onClose }: { vault: VaultRecord; onClose: () => void }) 
         }}
       >
         <div style={{
-          background: 'var(--bg3)', padding: '1.5rem',
+          background: 'var(--bg3)',
           borderBottom: '1px solid var(--border)',
-          display: 'flex', justifyContent: 'center',
+          height: 320, position: 'relative',
         }}>
-          <img
-            src={`https://cdn.ordinalswallet.com/inscription/preview/${vault.inscriptionId}`}
-            alt={vault.assetName}
-            style={{ maxHeight: 300, maxWidth: '100%', borderRadius: 8, objectFit: 'contain' }}
+          <div style={{
+            position: 'absolute', inset: 0,
+            display: 'flex', alignItems: 'center', justifyContent: 'center',
+            fontSize: '2rem', color: 'var(--text2)',
+          }}>₿</div>
+          <iframe
+            src={`https://ordinals.com/content/${vault.inscriptionId}`}
+            sandbox="allow-scripts"
+            scrolling="no"
+            frameBorder="0"
+            onLoad={(e) => {
+              const el = e.currentTarget;
+              if (el.previousElementSibling) {
+                (el.previousElementSibling as HTMLElement).style.display = 'none';
+              }
+              el.style.opacity = '1';
+            }}
+            style={{
+              width: '100%', height: '100%',
+              border: 'none', borderRadius: 8,
+              opacity: '0',
+              transition: 'opacity 0.5s ease-in',
+              position: 'relative', zIndex: 1,
+            }}
           />
         </div>
 
