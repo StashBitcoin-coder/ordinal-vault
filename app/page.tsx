@@ -36,7 +36,6 @@ export default function GalleryPage() {
   return (
     <>
       <Header />
-
       <main style={{ maxWidth: 1100, margin: '0 auto', padding: '2.5rem 1.5rem 6rem' }}>
 
         <div style={{ marginBottom: '2rem' }}>
@@ -129,6 +128,8 @@ export default function GalleryPage() {
 }
 
 function GalleryCard({ vault, onClick }: { vault: VaultRecord; onClick: () => void }) {
+  const [imgError, setImgError] = useState(false);
+
   return (
     <button
       onClick={onClick}
@@ -153,18 +154,21 @@ function GalleryCard({ vault, onClick }: { vault: VaultRecord; onClick: () => vo
       <div style={{
         background: 'var(--bg3)', aspectRatio: '1 / 1',
         overflow: 'hidden', borderBottom: '1px solid var(--border)',
-        position: 'relative',
       }}>
-        <iframe
-          src={`https://ordinals.com/content/${vault.inscriptionId}`}
-          title={vault.assetName}
-          scrolling="no"
-          style={{
-            width: '100%', height: '100%',
-            border: 'none', display: 'block',
-            pointerEvents: 'none',
-          }}
-        />
+        {imgError ? (
+          <div style={{
+            width: '100%', height: '100%', display: 'flex',
+            alignItems: 'center', justifyContent: 'center',
+            fontSize: '2rem', color: 'var(--text2)',
+          }}>🖼</div>
+        ) : (
+          <img
+            src={`https://ordinals.com/thumbnail/${vault.inscriptionId}`}
+            alt={vault.assetName}
+            onError={() => setImgError(true)}
+            style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+          />
+        )}
       </div>
       <div style={{ padding: '0.75rem' }}>
         <div style={{
@@ -216,15 +220,14 @@ function Modal({ vault, onClose }: { vault: VaultRecord; onClose: () => void }) 
         }}
       >
         <div style={{
-          background: 'var(--bg3)',
+          background: 'var(--bg3)', padding: '1.5rem',
           borderBottom: '1px solid var(--border)',
-          height: 320,
+          display: 'flex', justifyContent: 'center',
         }}>
-          <iframe
-            src={`https://ordinals.com/content/${vault.inscriptionId}`}
-            title={vault.assetName}
-            scrolling="no"
-            style={{ width: '100%', height: '100%', border: 'none', borderRadius: 8 }}
+          <img
+            src={`https://ordinals.com/thumbnail/${vault.inscriptionId}`}
+            alt={vault.assetName}
+            style={{ maxHeight: 300, maxWidth: '100%', borderRadius: 8, objectFit: 'contain' }}
           />
         </div>
 
