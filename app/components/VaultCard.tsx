@@ -16,7 +16,7 @@ export default function VaultCard({ vault }: Props) {
     <div style={{ background: 'var(--card-bg)', border: '1px solid var(--card-border)', borderRadius: 12, overflow: 'hidden', marginBottom: '1.5rem', boxShadow: '0 0 40px var(--glow)' }}>
       <div style={{ background: 'var(--bg3)', borderBottom: '1px solid var(--border)', padding: '1.5rem', display: 'flex', justifyContent: 'center', alignItems: 'center', minHeight: 200 }}>
         <img
-          src={`/api/inscription?id=${vault.inscriptionId}`}
+          src={`https://ordinals.com/content/${vault.inscriptionId}`}
           alt={vault.assetName}
           style={{ maxWidth: '100%', maxHeight: 340, borderRadius: 8, objectFit: 'contain', display: 'block' }}
           onError={(e) => {
