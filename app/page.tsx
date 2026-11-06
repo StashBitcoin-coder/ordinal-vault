@@ -77,7 +77,7 @@ export default function GalleryPage() {
             {vaults.length === 0 ? 'No vaults registered yet.' : 'No results match your search.'}
           </div>
         ) : (
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(200px, 1fr))', gap: '1rem' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(150px, 1fr))', gap: '1rem' }}>
             {sorted.map((vault) => (
               <GalleryCard key={vault.id} vault={vault} onClick={() => setSelected(vault)} />
             ))}
