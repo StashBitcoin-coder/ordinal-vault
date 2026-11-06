@@ -1238,5 +1238,21 @@
     "inscriptionId": "aa81696ff6164c331a2be75d17e19cb88bb6c3747147b7c60e4cdd6502594ae3i0",
     "assetName": "RWA#155",
     "createdAt": "2026-05-18T23:52:40.916Z"
+  },
+  {
+    "id": "cc9a7120-ec08-46c4-ae5e-08930c7e700a",
+    "walletAddress": "bc1pv778ehs9c8mfaaj667e5u8n8m7xh0c9g84jtcs4j8k8xgzlun5ls5wn3qf",
+    "inscriptionNumber": 127798153,
+    "inscriptionId": "7bccce315f7f917afd431c684c91ea2a8dd35743b44b8c85f3f232a8426286a1i0",
+    "assetName": "RWA156",
+    "createdAt": "2026-11-06T19:29:20.929Z"
+  },
+  {
+    "id": "937b6d43-bc28-4ea5-b264-42fefc2cffb8",
+    "walletAddress": "bc1py0ztl5g37heaq50slnt4jgn5nzjuww3e36r4z96sfcmljf44jeps7c9pzq",
+    "inscriptionNumber": 127798154,
+    "inscriptionId": "7bccce315f7f917afd431c684c91ea2a8dd35743b44b8c85f3f232a8426286a1i1",
+    "assetName": "RWA157",
+    "createdAt": "2026-11-06T19:30:39.457Z"
   }
 ]
