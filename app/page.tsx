@@ -27,7 +27,7 @@ export default function GalleryPage() {
       String(v.inscriptionNumber).includes(search)
     )
     .sort((a, b) => {
-      if (sort === 'newest') return new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime();
+      if (sort === 'newest') return b.inscriptionNumber - a.inscriptionNumber;
       if (sort === 'oldest') return new Date(a.createdAt).getTime() - new Date(b.createdAt).getTime();
       if (sort === 'name') return a.assetName.localeCompare(b.assetName);
       return a.inscriptionNumber - b.inscriptionNumber;
