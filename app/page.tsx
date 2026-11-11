@@ -118,9 +118,9 @@ function GalleryCard({ vault, onClick }: { vault: VaultRecord; onClick: () => vo
           <div style={{ fontSize: '0.65rem', color: 'var(--accent)', fontFamily: "'Space Mono', monospace", letterSpacing: '0.05em' }}>
             #{vault.inscriptionNumber}
           </div>
-          {ault.edition && (
+          {vault.edition && (
             <div style={{ fontSize: '0.6rem', color: '#888', fontFamily: "'Space Mono', monospace" }}>
-              {ault.edition}
+              {vault.edition}
             </div>
           )}
         </div>
