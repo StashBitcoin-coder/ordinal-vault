@@ -114,8 +114,15 @@ function GalleryCard({ vault, onClick }: { vault: VaultRecord; onClick: () => vo
         <div style={{ fontFamily: "'Oswald', sans-serif", fontWeight: 700, fontSize: '0.82rem', color: 'var(--text)', marginBottom: '0.25rem', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
           {vault.assetName}
         </div>
-        <div style={{ fontSize: '0.65rem', color: 'var(--accent)', fontFamily: "'Space Mono', monospace", letterSpacing: '0.05em' }}>
-          #{vault.inscriptionNumber}
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+          <div style={{ fontSize: '0.65rem', color: 'var(--accent)', fontFamily: "'Space Mono', monospace", letterSpacing: '0.05em' }}>
+            #{vault.inscriptionNumber}
+          </div>
+          {ault.edition && (
+            <div style={{ fontSize: '0.6rem', color: '#888', fontFamily: "'Space Mono', monospace" }}>
+              {ault.edition}
+            </div>
+          )}
         </div>
       </div>
     </button>
