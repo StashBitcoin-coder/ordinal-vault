@@ -9,7 +9,7 @@ type SortOption = 'newest' | 'oldest' | 'name' | 'number';
 export default function GalleryPage() {
   const [vaults, setVaults] = useState<VaultRecord[]>([]);
   const [loading, setLoading] = useState(true);
-  const [sort, setSort] = useState<SortOption>('number');
+  const [sort, setSort] = useState<SortOption>('newest');
   const [search, setSearch] = useState('');
   const [selected, setSelected] = useState<VaultRecord | null>(null);
 
