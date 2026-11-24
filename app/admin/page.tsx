@@ -255,17 +255,40 @@ export default function AdminPage() {
               background: 'var(--bg3)', border: '1px solid var(--border)',
               borderRadius: 10, fontSize: '0.72rem', color: 'var(--text2)', lineHeight: 2,
             }}>
-              <div style={{ color: 'var(--text)', fontWeight: 700, fontFamily: "'Oswald', sans-serif", fontSize: '0.85rem', marginBottom: '0.5rem' }}>
-                📡 DEPLOY TO LIVE SITE
+              <div style={{ color: 'var(--text)', fontWeight: 700, fontFamily: "'Oswald', sans-serif", fontSize: '0.9rem', marginBottom: '0.75rem', letterSpacing: '0.05em' }}>
+                📋 HOW TO USE THIS ADMIN PANEL
               </div>
-              <div>After adding all entries, open <strong style={{ color: 'var(--text)' }}>Git Bash</strong> and run:</div>
+
+              <div style={{ marginBottom: '0.25rem' }}><strong style={{ color: 'var(--text)' }}>STEP 1 — Start the local server</strong></div>
+              <div style={{ marginBottom: '0.25rem' }}>Open <strong style={{ color: 'var(--text)' }}>Git Bash</strong> and run:</div>
               <pre style={{
                 background: 'var(--card-bg)', border: '1px solid var(--card-border)',
-                borderRadius: 6, padding: '0.75rem 1rem', marginTop: '0.5rem',
+                borderRadius: 6, padding: '0.75rem 1rem', margin: '0.4rem 0 1rem',
                 fontFamily: "'Space Mono', monospace", fontSize: '0.7rem',
                 color: 'var(--accent)', overflowX: 'auto', whiteSpace: 'pre-wrap',
-              }}>{`cd /f/Backup-Oct2026/1A-WORK-CLIENTS/IMMUTABLE_EDITIONS-rwi/First-155-Ordinals/ordinal-vault/ordinal-vault\ngit add .\ngit commit -m "Add new vault entries"\ngit push`}</pre>
-              <div style={{ marginTop: '0.5rem' }}>Vercel will redeploy automatically. Live in ~30 seconds.</div>
+              }}>{`cd /f/Backup-Oct2026/1A-WORK-CLIENTS/IMMUTABLE_EDITIONS-rwi/First-155-Ordinals/ordinal-vault/ordinal-vault\nnpm run dev`}</pre>
+
+              <div style={{ marginBottom: '0.25rem' }}><strong style={{ color: 'var(--text)' }}>STEP 2 — Open the admin panel</strong></div>
+              <div style={{ marginBottom: '0.25rem' }}>In your browser go to:</div>
+              <pre style={{
+                background: 'var(--card-bg)', border: '1px solid var(--card-border)',
+                borderRadius: 6, padding: '0.75rem 1rem', margin: '0.4rem 0 1rem',
+                fontFamily: "'Space Mono', monospace", fontSize: '0.7rem',
+                color: 'var(--accent)', overflowX: 'auto',
+              }}>{`http://localhost:3000/admin`}</pre>
+
+              <div style={{ marginBottom: '0.25rem' }}><strong style={{ color: 'var(--text)' }}>STEP 3 — Add your entries</strong></div>
+              <div style={{ marginBottom: '1rem' }}>Enter the admin secret, fill in the fields, and hit REGISTER VAULT for each card.</div>
+
+              <div style={{ marginBottom: '0.25rem' }}><strong style={{ color: 'var(--text)' }}>STEP 4 — Deploy to live site</strong></div>
+              <div style={{ marginBottom: '0.25rem' }}>Back in Git Bash run:</div>
+              <pre style={{
+                background: 'var(--card-bg)', border: '1px solid var(--card-border)',
+                borderRadius: 6, padding: '0.75rem 1rem', margin: '0.4rem 0 0.5rem',
+                fontFamily: "'Space Mono', monospace", fontSize: '0.7rem',
+                color: 'var(--accent)', overflowX: 'auto', whiteSpace: 'pre-wrap',
+              }}>{`git add .\ngit commit -m "Add new vault entries"\ngit push`}</pre>
+              <div>Vercel redeploys automatically. Live in ~30 seconds.</div>
             </div>
           </>
         )}
