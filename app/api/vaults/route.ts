@@ -57,6 +57,7 @@ export async function POST(req: NextRequest) {
     inscriptionNumber: Number(inscriptionNumber),
     inscriptionId: inscriptionId.trim(),
     assetName: assetName.trim(),
+    edition: (body.edition || "").trim(),
     createdAt: new Date().toISOString(),
   };
 
