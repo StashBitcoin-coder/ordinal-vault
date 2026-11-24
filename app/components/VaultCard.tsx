@@ -32,6 +32,7 @@ export default function VaultCard({ vault }: Props) {
           {vault.assetName}
         </div>
 
+        <Row label="EDITION" value={vault.edition || "—"} />
         <Row label="INSCRIPTION #" value={`#${vault.inscriptionNumber}`} />
         <Row label="WALLET ADDRESS" value={vault.walletAddress} mono />
         <Row label="INSCRIPTION ID" value={vault.inscriptionId} mono truncate />
