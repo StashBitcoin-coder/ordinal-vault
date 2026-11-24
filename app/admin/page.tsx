@@ -249,6 +249,24 @@ export default function AdminPage() {
               <strong style={{ color: 'var(--text)' }}>Batch tip:</strong> The wallet address stays filled after each submit.
               If multiple cards share the same vault address, just update the name, inscription #, and ID and keep hitting Register.
             </div>
+
+            <div style={{
+              marginTop: '1.5rem', padding: '1.25rem 1.5rem',
+              background: 'var(--bg3)', border: '1px solid var(--border)',
+              borderRadius: 10, fontSize: '0.72rem', color: 'var(--text2)', lineHeight: 2,
+            }}>
+              <div style={{ color: 'var(--text)', fontWeight: 700, fontFamily: "'Oswald', sans-serif", fontSize: '0.85rem', marginBottom: '0.5rem' }}>
+                📡 DEPLOY TO LIVE SITE
+              </div>
+              <div>After adding all entries, open <strong style={{ color: 'var(--text)' }}>Git Bash</strong> and run:</div>
+              <pre style={{
+                background: 'var(--card-bg)', border: '1px solid var(--card-border)',
+                borderRadius: 6, padding: '0.75rem 1rem', marginTop: '0.5rem',
+                fontFamily: "'Space Mono', monospace", fontSize: '0.7rem',
+                color: 'var(--accent)', overflowX: 'auto', whiteSpace: 'pre-wrap',
+              }}>{`cd /f/Backup-Oct2026/1A-WORK-CLIENTS/IMMUTABLE_EDITIONS-rwi/First-155-Ordinals/ordinal-vault/ordinal-vault\ngit add .\ngit commit -m "Add new vault entries"\ngit push`}</pre>
+              <div style={{ marginTop: '0.5rem' }}>Vercel will redeploy automatically. Live in ~30 seconds.</div>
+            </div>
           </>
         )}
 
