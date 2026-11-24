@@ -1365,7 +1365,8 @@
     "inscriptionNumber": 128043830,
     "inscriptionId": "f8117652ac45d9b2a0996c928ae6800c14ad97e0f58b05d12075758e1b3b2a0bi0",
     "assetName": "RWA#169",
-    "createdAt": "2026-11-24T18:45:12.303Z"
+    "createdAt": "2026-11-24T18:45:12.303Z",
+    "edition": "Solar Flare 1/1"
   },
   {
     "id": "09185405-5080-4522-9249-cd2f65196304",
@@ -1373,7 +1374,8 @@
     "inscriptionNumber": 128043831,
     "inscriptionId": "f8117652ac45d9b2a0996c928ae6800c14ad97e0f58b05d12075758e1b3b2a0bi1",
     "assetName": "RWA#170",
-    "createdAt": "2026-11-24T18:59:31.919Z"
+    "createdAt": "2026-11-24T18:59:31.919Z",
+    "edition": "Blu Moon 1/1"
   },
   {
     "id": "1531eb9f-d617-4b5a-b4d2-afca87ecca90",
@@ -1381,7 +1383,8 @@
     "inscriptionNumber": 128043832,
     "inscriptionId": "f8117652ac45d9b2a0996c928ae6800c14ad97e0f58b05d12075758e1b3b2a0bi2",
     "assetName": "RWA#171",
-    "createdAt": "2026-11-24T19:00:30.091Z"
+    "createdAt": "2026-11-24T19:00:30.091Z",
+    "edition": "Dark Earth 1/1"
   },
   {
     "id": "5441a1a4-8a09-4a1c-bc50-f9ba6db1f871",
@@ -1389,7 +1392,8 @@
     "inscriptionNumber": 128043833,
     "inscriptionId": "f8117652ac45d9b2a0996c928ae6800c14ad97e0f58b05d12075758e1b3b2a0bi3",
     "assetName": "RWA#172",
-    "createdAt": "2026-11-24T19:01:24.249Z"
+    "createdAt": "2026-11-24T19:01:24.249Z",
+    "edition": "Blu Moon 1/1"
   },
   {
     "id": "967d8086-aeb3-4599-bed7-effcddb0176a",
@@ -1397,7 +1401,8 @@
     "inscriptionNumber": 128043834,
     "inscriptionId": "f8117652ac45d9b2a0996c928ae6800c14ad97e0f58b05d12075758e1b3b2a0bi4",
     "assetName": "RWA#173",
-    "createdAt": "2026-11-24T19:02:13.720Z"
+    "createdAt": "2026-11-24T19:02:13.720Z",
+    "edition": "Tourmaline 1/1"
   },
   {
     "id": "c418c422-df01-482b-8f06-a49ef2540e36",
@@ -1405,7 +1410,8 @@
     "inscriptionNumber": 128043835,
     "inscriptionId": "f8117652ac45d9b2a0996c928ae6800c14ad97e0f58b05d12075758e1b3b2a0bi5",
     "assetName": "RWA#174",
-    "createdAt": "2026-11-24T19:03:01.914Z"
+    "createdAt": "2026-11-24T19:03:01.914Z",
+    "edition": "Rubelite 1/1"
   },
   {
     "id": "0c7d2523-e9a2-41de-b2a6-3c6c23e4bc7e",
@@ -1413,7 +1419,8 @@
     "inscriptionNumber": 128043836,
     "inscriptionId": "f8117652ac45d9b2a0996c928ae6800c14ad97e0f58b05d12075758e1b3b2a0bi6",
     "assetName": "RWA#175",
-    "createdAt": "2026-11-24T19:03:49.750Z"
+    "createdAt": "2026-11-24T19:03:49.750Z",
+    "edition": "Astral Rose 1/1"
   },
   {
     "id": "b40c6426-e56f-4e8c-97f4-e0033df649a0",
@@ -1421,7 +1428,8 @@
     "inscriptionNumber": 128043837,
     "inscriptionId": "f8117652ac45d9b2a0996c928ae6800c14ad97e0f58b05d12075758e1b3b2a0bi7",
     "assetName": "RWA#176",
-    "createdAt": "2026-11-24T19:04:52.080Z"
+    "createdAt": "2026-11-24T19:04:52.080Z",
+    "edition": "Neon Nova 1/1"
   },
   {
     "id": "48278d0f-3330-4616-bde5-6f4f62d1cde4",
@@ -1429,7 +1437,8 @@
     "inscriptionNumber": 128043838,
     "inscriptionId": "f8117652ac45d9b2a0996c928ae6800c14ad97e0f58b05d12075758e1b3b2a0bi8",
     "assetName": "RWA#177",
-    "createdAt": "2026-11-24T19:05:43.121Z"
+    "createdAt": "2026-11-24T19:05:43.121Z",
+    "edition": "Arbordark 1/1"
   },
   {
     "id": "d25ccf87-3adf-4cf0-bbf9-75bf0abbc26e",
@@ -1437,6 +1446,7 @@
     "inscriptionNumber": 128043839,
     "inscriptionId": "f8117652ac45d9b2a0996c928ae6800c14ad97e0f58b05d12075758e1b3b2a0bi9",
     "assetName": "RWA#178",
-    "createdAt": "2026-11-24T19:06:45.326Z"
+    "createdAt": "2026-11-24T19:06:45.326Z",
+    "edition": "Midnight Lotus 1/1"
   }
 ]
