@@ -1358,5 +1358,13 @@
     "edition": "2/3",
     "title": "Blue Splash",
     "createdAt": "2026-11-11T22:37:26.458Z"
+  },
+  {
+    "id": "837653a7-3afd-48eb-a705-c400453631bc",
+    "walletAddress": "bc1p76h09qu2jym6r67cph2ls3kkukm98ypj4kns35hswktpu6s4zegq39r6ns",
+    "inscriptionNumber": 128043830,
+    "inscriptionId": "f8117652ac45d9b2a0996c928ae6800c14ad97e0f58b05d12075758e1b3b2a0bi0",
+    "assetName": "RWA#169",
+    "createdAt": "2026-11-24T18:45:12.303Z"
   }
 ]

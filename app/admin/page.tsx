@@ -4,13 +4,14 @@ import Header from '@/app/components/Header';
 import { VaultRecord } from '@/app/types';
 
 const FIELDS = [
-  { key: 'assetName', label: 'ASSET NAME', placeholder: 'Card #47', mono: false },
+  { key: 'assetName', label: 'ASSET NAME', placeholder: 'RWA#169', mono: false },
+  { key: 'edition', label: 'EDITION', placeholder: '1/1', mono: true },
   { key: 'walletAddress', label: 'VAULT WALLET ADDRESS', placeholder: 'bc1p...', mono: true },
   { key: 'inscriptionNumber', label: 'INSCRIPTION NUMBER', placeholder: '12345678', mono: true },
   { key: 'inscriptionId', label: 'INSCRIPTION ID', placeholder: '01b0dd65...i0', mono: true },
 ] as const;
 
-const empty = { assetName: '', walletAddress: '', inscriptionNumber: '', inscriptionId: '' };
+const empty = { assetName: '', edition: '', walletAddress: '', inscriptionNumber: '', inscriptionId: '' };
 
 export default function AdminPage() {
   const [secret, setSecret] = useState('');
